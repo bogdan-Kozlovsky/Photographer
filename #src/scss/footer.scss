@@ -1,0 +1,53 @@
+.footer {
+  @include adaptiv-value("margin-top", 45, 30, 1);
+  padding: 35px 0px 35px 0px;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    flex: 0 1 580px;
+    margin: 0 15px;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex: 0 1 200px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .menu__item {
+      + .menu__item {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 930px) {
+  .footer {
+    &__list {
+      flex: 1 1 100%;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    &__menu-list {
+      order: -1;
+    }
+
+    &__inner {
+      .logo {
+        order: -2;
+      }
+    }
+  }
+}
